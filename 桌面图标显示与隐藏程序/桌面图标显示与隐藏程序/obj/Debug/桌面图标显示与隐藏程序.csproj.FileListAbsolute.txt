@@ -1,0 +1,6 @@
+C:\Users\Thaumy\Desktop\桌面图标显示与隐藏程序\桌面图标显示与隐藏程序\bin\Debug\桌面图标显示与隐藏程序.exe.config
+C:\Users\Thaumy\Desktop\桌面图标显示与隐藏程序\桌面图标显示与隐藏程序\bin\Debug\桌面图标显示与隐藏程序.exe
+C:\Users\Thaumy\Desktop\桌面图标显示与隐藏程序\桌面图标显示与隐藏程序\bin\Debug\桌面图标显示与隐藏程序.pdb
+C:\Users\Thaumy\Desktop\桌面图标显示与隐藏程序\桌面图标显示与隐藏程序\obj\Debug\桌面图标显示与隐藏程序.csprojResolveAssemblyReference.cache
+C:\Users\Thaumy\Desktop\桌面图标显示与隐藏程序\桌面图标显示与隐藏程序\obj\Debug\桌面图标显示与隐藏程序.exe
+C:\Users\Thaumy\Desktop\桌面图标显示与隐藏程序\桌面图标显示与隐藏程序\obj\Debug\桌面图标显示与隐藏程序.pdb
