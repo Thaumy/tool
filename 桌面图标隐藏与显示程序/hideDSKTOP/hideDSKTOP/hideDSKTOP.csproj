@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4078718D-7AF1-43D8-9359-6014124F3712}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{162A2309-7285-468C-824E-C51B850F7521}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>桌面图标显示与隐藏程序</RootNamespace>
-    <AssemblyName>桌面图标显示与隐藏程序</AssemblyName>
+    <RootNamespace>hideDSKTOP</RootNamespace>
+    <AssemblyName>hideDSKTOP</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -38,7 +38,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />

@@ -1,0 +1,12 @@
+C:\Users\Thaumy\Desktop\hideDSKTOP\hideDSKTOP\bin\Debug\hideDSKTOP.exe.config
+C:\Users\Thaumy\Desktop\hideDSKTOP\hideDSKTOP\bin\Debug\hideDSKTOP.exe
+C:\Users\Thaumy\Desktop\hideDSKTOP\hideDSKTOP\bin\Debug\hideDSKTOP.pdb
+C:\Users\Thaumy\Desktop\hideDSKTOP\hideDSKTOP\obj\Debug\hideDSKTOP.csprojResolveAssemblyReference.cache
+C:\Users\Thaumy\Desktop\hideDSKTOP\hideDSKTOP\obj\Debug\hideDSKTOP.exe
+C:\Users\Thaumy\Desktop\hideDSKTOP\hideDSKTOP\obj\Debug\hideDSKTOP.pdb
+F:\工程卷\C#项目开发\桌面图标隐藏与显示程序\hideDSKTOP\hideDSKTOP\bin\Debug\hideDSKTOP.exe.config
+F:\工程卷\C#项目开发\桌面图标隐藏与显示程序\hideDSKTOP\hideDSKTOP\obj\Debug\hideDSKTOP.exe
+F:\工程卷\C#项目开发\桌面图标隐藏与显示程序\hideDSKTOP\hideDSKTOP\obj\Debug\hideDSKTOP.pdb
+F:\工程卷\C#项目开发\桌面图标隐藏与显示程序\hideDSKTOP\hideDSKTOP\bin\Debug\hideDSKTOP.exe
+F:\工程卷\C#项目开发\桌面图标隐藏与显示程序\hideDSKTOP\hideDSKTOP\bin\Debug\hideDSKTOP.pdb
+F:\工程卷\C#项目开发\桌面图标隐藏与显示程序\hideDSKTOP\hideDSKTOP\obj\Debug\hideDSKTOP.csprojResolveAssemblyReference.cache

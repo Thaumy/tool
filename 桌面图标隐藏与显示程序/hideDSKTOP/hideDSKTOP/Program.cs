@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;//调用winAPI
 
-
-namespace 桌面图标显示与隐藏程序
+namespace hideDSKTOP
 {
     class Program
     {
+
         [DllImport("User32.dll", EntryPoint = "FindWindow")]
         private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 
@@ -23,18 +23,15 @@ namespace 桌面图标显示与隐藏程序
         [DllImport("user32.dll")]
         public static extern bool IsWindowVisible(IntPtr hwnd);
 
-        public const int SW_SHOW = 5;
-        public const int SW_HIDE = 0;
-
         static void Main(string[] args)
         {
-            //初始化
+            //必须存在WorkerW类（有自动更换壁纸之类的系统设定），才能使用以下代码
             IntPtr hwndWorkerW = IntPtr.Zero;
             IntPtr hwndShellDefView = IntPtr.Zero;
             IntPtr hwndDesktop = IntPtr.Zero;
 
-            //因为存在的WorkerW类有2个，所以要遍历以取得可用的WorkerW类
-            while (hwndDesktop == IntPtr.Zero)//如果获取不到SysListView32类（hwndDesktop），重新循环
+            //因为存在两个WorkerW类，所以要循环取得可用的SysListView32类（桌面）
+            while (hwndDesktop == IntPtr.Zero)
             {
                 hwndWorkerW = FindWindowEx(IntPtr.Zero, hwndWorkerW, "WorkerW", null);//获得WorkerW类的窗口
 
@@ -43,9 +40,8 @@ namespace 桌面图标显示与隐藏程序
                 hwndDesktop = FindWindowEx(hwndShellDefView, IntPtr.Zero, "SysListView32", null);//获得SysListView32类的窗口
             }
 
-
-            //测试是否获取到句柄的代码，如果取到，则不会输出0
-            /*  
+            //如果获取到了窗口，则不会输出0
+            /*
             Console.WriteLine(hwndWorkerW);
             Console.WriteLine(hwndShellDefView);
             Console.WriteLine(hwndDesktop);
@@ -53,7 +49,7 @@ namespace 桌面图标显示与隐藏程序
             Console.ReadKey();
             */
 
-            if (IsWindowVisible(hwndDesktop) == true)//如果图标可见
+            if (IsWindowVisible(hwndDesktop) == true)//如果桌面图标可见
             {
                 ShowWindow(hwndDesktop, 0);//隐藏图标
             }
@@ -61,6 +57,7 @@ namespace 桌面图标显示与隐藏程序
             {
                 ShowWindow(hwndDesktop, 5);//显示图标
             }
+
 
         }
     }

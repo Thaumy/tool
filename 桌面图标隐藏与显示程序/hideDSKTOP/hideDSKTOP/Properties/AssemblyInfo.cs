@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("桌面图标显示与隐藏程序")]
+[assembly: AssemblyTitle("hideDSKTOP")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("桌面图标显示与隐藏程序")]
+[assembly: AssemblyProduct("hideDSKTOP")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("4078718d-7af1-43d8-9359-6014124f3712")]
+[assembly: Guid("162a2309-7285-468c-824e-c51b850f7521")]
 
 // 程序集的版本信息由下列四个值组成: 
 //
