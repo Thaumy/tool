@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int opr = 1;
+            int opr2 = 2;
+            int opr3;
+            unchecked
+            {
+                opr3 = opr2 + opr;
+            }
+            Console.WriteLine(opr3);
+            Console.ReadKey();
+        }
+    }
+}
+
+//20:55 2016/6/17
+/*
+使用unchecked运算符，编译器在编译时禁止所有未标记代码的溢出
+*/

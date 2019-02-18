@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Get Getit = new Get("1");
+
+            Getit.Output();
+        }
+        public class Get
+        {
+            public string opr;
+            public Get(string time)
+            {
+                opr = time;
+            }
+
+            public void Output()
+            {
+                Console.WriteLine(opr);
+            }
+        }
+    }
+}

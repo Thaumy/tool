@@ -1,0 +1,12 @@
+E:\C#\1quickRun\1quickRun\bin\Debug\1quickRun.exe.config
+E:\C#\1quickRun\1quickRun\bin\Debug\1quickRun.exe
+E:\C#\1quickRun\1quickRun\bin\Debug\1quickRun.pdb
+E:\C#\1quickRun\1quickRun\obj\Debug\1quickRun.csprojResolveAssemblyReference.cache
+E:\C#\1quickRun\1quickRun\obj\Debug\_1quickRun.Form1.resources
+E:\C#\1quickRun\1quickRun\obj\Debug\_1quickRun.Properties.Resources.resources
+E:\C#\1quickRun\1quickRun\obj\Debug\1quickRun.csproj.GenerateResource.Cache
+E:\C#\1quickRun\1quickRun\obj\Debug\1quickRun.exe
+E:\C#\1quickRun\1quickRun\obj\Debug\1quickRun.pdb
+K:\C#项目开发\1quickRun\1quickRun\1quickRun\bin\Debug\1quickRun.exe.config
+K:\C#项目开发\1quickRun\1quickRun\1quickRun\obj\Debug\1quickRun.exe
+K:\C#项目开发\1quickRun\1quickRun\1quickRun\obj\Debug\1quickRun.pdb

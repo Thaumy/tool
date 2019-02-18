@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //½Ó¿Ú¼Ì³ÐÀý³Ì
+
+            EP Example0 = new EP(36);
+
+            Console.WriteLine("x={0}",Example0.x);
+
+            Example0.watchTV();
+
+            Example0.x = 49;
+
+            Console.WriteLine("now x = {0}", Example0.x);
+
+        }
+
+        public interface IEP
+        {
+            void watchTV();
+            int x { get; set; }
+        }
+        public interface IEP2 : IEP
+        {
+        }
+
+        class EP : IEP2
+        {
+            int opr2_x;
+
+            public EP(int opr_x)
+            {
+                opr2_x = opr_x;
+            }
+
+            public void watchTV()
+            {
+                Console.WriteLine("I can watch TV!");
+            }
+
+            public int x
+            {
+                get { return opr2_x; }
+                set { opr2_x = value; }
+            }
+        }
+    }
+}

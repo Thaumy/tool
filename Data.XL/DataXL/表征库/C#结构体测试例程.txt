@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Student 小明;
+
+            Console.WriteLine("我的名字叫小明");
+
+            小明.StuNum = "Std08087";
+            小明.StuAge = 15;
+
+            小明.Say();
+
+            Console.ReadKey();
+        }
+        struct Student
+        {
+            public String StuNum;
+            public int StuAge;
+            
+            public Student(String StuNum,int StuAge)
+            {
+                this.StuNum = StuNum;
+                this.StuAge = StuAge;
+            }//这只是一个构造结构，然而里面的构造体并没有什么乱用。
+            
+            public void Say()
+            {
+                Console.WriteLine("我的学号是:"+StuNum);
+                Console.WriteLine("我的学号是:"+StuAge);
+            }
+        }
+    }
+}

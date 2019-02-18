@@ -1,0 +1,11 @@
+C:\Users\Thaumy\Desktop\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\Thaumy\Desktop\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\Thaumy\Desktop\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\Thaumy\Desktop\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\Thaumy\Desktop\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+F:\工程卷\C#项目开发\音乐滚词软件\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+F:\工程卷\C#项目开发\音乐滚词软件\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+F:\工程卷\C#项目开发\音乐滚词软件\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+F:\工程卷\C#项目开发\音乐滚词软件\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+F:\工程卷\C#项目开发\音乐滚词软件\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+F:\工程卷\C#项目开发\音乐滚词软件\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb

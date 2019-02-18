@@ -1,0 +1,6 @@
+E:\C#\EnglishSE\EnglishSE\bin\Debug\EnglishSE.exe.config
+E:\C#\EnglishSE\EnglishSE\bin\Debug\EnglishSE.exe
+E:\C#\EnglishSE\EnglishSE\bin\Debug\EnglishSE.pdb
+E:\C#\EnglishSE\EnglishSE\obj\Debug\EnglishSE.csprojResolveAssemblyReference.cache
+E:\C#\EnglishSE\EnglishSE\obj\Debug\EnglishSE.exe
+E:\C#\EnglishSE\EnglishSE\obj\Debug\EnglishSE.pdb

@@ -1,0 +1,104 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            /*患者初始化*/
+            String 患者 = "小明";
+
+            肾虚 小明 = new 肾虚();
+            /*                    */
+
+
+            /*肾虚参数*/
+            String[] 肾虚参数 = new string[]
+            {
+                "十年",//肾虚时间
+                "男",//患者性别
+                "急性",//病情
+            };
+            /*                     */
+            Console.WriteLine("欢迎你来荣成市中医院做肾检！！");
+            小明.肾虚情况寄存器0 = false;//调用私有属性成员【是否肾虚】
+            Console.WriteLine("你的医生告诉你：");
+
+            小明.肾虚情况寄存器1 = true;
+            小明.使肾虚(肾虚参数[0],小明.肾虚情况寄存器1);
+
+
+            发票打印机.打印发票(患者,肾虚参数[0], 肾虚参数[1], 肾虚参数[2]);
+
+            Console.ReadKey();
+        }
+
+        public class 肾虚
+        {
+            private bool 是否肾虚;
+            private bool 可否好转;
+
+            public bool 肾虚情况寄存器0
+            {
+                get { return 是否肾虚; }
+                set { 是否肾虚 = value; }
+            }
+            public bool 肾虚情况寄存器1
+            {
+                get { return 可否好转; }
+                set { 可否好转 = value; }
+            }
+
+            public void 使肾虚(String 肾虚时间,bool 可否好转)
+            {
+                if (是否肾虚 == true)
+                {
+                    Console.WriteLine("“你肾虚至少"+肾虚时间+"了");
+
+                    if (可否好转==true)
+                    {
+                        Console.WriteLine("不过你的肾虚会好转康复的”");
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("你没救了，得换肾，在我这可以给你打八折”");
+                        Console.WriteLine();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("“你的身体非常健康，肾虚是没有必要担心的”");
+                    Console.WriteLine();
+                }
+            }
+        }
+
+        public class 发票打印机
+        {
+            static 发票打印机()
+            {
+                Console.WriteLine("你吓的赶紧去开了张单子");
+                Console.WriteLine("发票机：正在创建发票....");
+            }
+
+            public static void 打印发票(String 患者,String 肾虚时间,String 性别,String 病情)
+            {
+                Console.WriteLine("荣成市中医院肾科化验单：");
+                Console.WriteLine("姓名：{0}",患者);
+                Console.WriteLine("肾虚时间：{0}",肾虚时间);
+                Console.WriteLine("性别：{0}",性别);
+                Console.WriteLine("病情：{0}",病情);
+            }
+
+            ~发票打印机(){
+                Console.WriteLine("请及时复查，以免病情加重\n祝你早日康复！！");
+            }
+        }
+    }
+}

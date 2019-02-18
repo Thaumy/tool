@@ -1,0 +1,17 @@
+J:\Sreb\Sreb\bin\Debug\Sreb.exe.config
+J:\Sreb\Sreb\bin\Debug\Sreb.exe
+J:\Sreb\Sreb\bin\Debug\Sreb.pdb
+J:\Sreb\Sreb\obj\Debug\Sreb.Form1.resources
+J:\Sreb\Sreb\obj\Debug\Sreb.Properties.Resources.resources
+J:\Sreb\Sreb\obj\Debug\Sreb.csproj.GenerateResource.Cache
+J:\Sreb\Sreb\obj\Debug\Sreb.exe
+J:\Sreb\Sreb\obj\Debug\Sreb.pdb
+K:\Sreb\Sreb\bin\Debug\Sreb.exe.config
+K:\Sreb\Sreb\obj\Debug\Sreb.exe
+K:\Sreb\Sreb\obj\Debug\Sreb.pdb
+K:\Sreb\Sreb\bin\Debug\Sreb.exe
+K:\Sreb\Sreb\bin\Debug\Sreb.pdb
+K:\Sreb\Sreb\obj\Debug\Sreb.csprojResolveAssemblyReference.cache
+K:\Sreb\Sreb\obj\Debug\Sreb.Form1.resources
+K:\Sreb\Sreb\obj\Debug\Sreb.Properties.Resources.resources
+K:\Sreb\Sreb\obj\Debug\Sreb.csproj.GenerateResource.Cache

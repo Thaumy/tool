@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication2
+{
+    class Program//委托测试例程2
+    {
+        public delegate void Dele1(int opt);
+
+        static void Main(string[] args)
+        {
+            Dele1 MyDele;
+
+            MyDele = new Dele1(OutputINT.output);
+
+            MyDele(10);
+
+        }
+
+
+
+        public class OutputINT
+        {
+
+            public  static void output(int opt)
+            {
+                Console.WriteLine("输出结果："+opt);
+            }
+
+        }
+    }
+}

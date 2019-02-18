@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication3
+{
+    class Program
+    {
+        static void Main(string[] args)//抽象类范例
+        {
+            //objP NPP = new objP();//初始化无参数，运行无参父类构造函数，输出"null par"
+            objP NPP = new objP();//初始化单参，运行单参父类构造函数，输出
+
+            /*P npp = new P();*/
+            //抽象类不能被实例化：：编译器报错：无法创建抽象类或接口“Program.P”的实例
+
+            NPP.M1();
+            NPP.M2("M2(is a par)"/*null*/);
+
+            NPP.b = 100;
+            Console.WriteLine(NPP.b);
+
+            
+        }
+
+        public abstract class P
+        {
+            public P()//当抽象基类被子类继承时，基类根据是否有参来选择重载构造
+            {
+                Console.WriteLine("null par");
+            }
+            
+            // c# 抽象类支持重载（构造）函数
+
+            public abstract void M1();
+            public abstract void M2(string a);
+
+            public int b;
+        }
+
+        public class objP : P
+        {
+            public objP()
+            {
+                Console.WriteLine(base.b);
+            }
+
+            public override void M1()//用重写实例化抽象基类方法
+            {
+                Console.WriteLine("Hi,im M1 !!");
+            }
+
+            public override void M2(string name)
+            {
+                Console.WriteLine("Hi,im {0} !!",name);
+            }
+            /*
+            public new void M1
+            {
+            不能使用new把M1再次实例化
+            }
+            */
+        }
+    }
+}

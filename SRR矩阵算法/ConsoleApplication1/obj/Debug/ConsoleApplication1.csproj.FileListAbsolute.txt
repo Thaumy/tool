@@ -1,0 +1,15 @@
+E:\CSharp\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+E:\CSharp\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+E:\CSharp\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+E:\CSharp\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+E:\CSharp\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+E:\CSharp\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+O:\C#项目开发\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+O:\C#项目开发\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+O:\C#项目开发\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+O:\C#项目开发\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+O:\C#项目开发\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+O:\C#项目开发\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+K:\C#项目开发\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+K:\C#项目开发\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+K:\C#项目开发\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

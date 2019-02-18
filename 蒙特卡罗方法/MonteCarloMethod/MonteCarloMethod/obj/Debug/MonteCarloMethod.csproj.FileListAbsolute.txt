@@ -1,0 +1,6 @@
+C:\Users\Thaumy\Desktop\MonteCarloMethod\MonteCarloMethod\bin\Debug\MonteCarloMethod.exe.config
+C:\Users\Thaumy\Desktop\MonteCarloMethod\MonteCarloMethod\obj\Debug\MonteCarloMethod.csprojResolveAssemblyReference.cache
+C:\Users\Thaumy\Desktop\MonteCarloMethod\MonteCarloMethod\bin\Debug\MonteCarloMethod.exe
+C:\Users\Thaumy\Desktop\MonteCarloMethod\MonteCarloMethod\bin\Debug\MonteCarloMethod.pdb
+C:\Users\Thaumy\Desktop\MonteCarloMethod\MonteCarloMethod\obj\Debug\MonteCarloMethod.exe
+C:\Users\Thaumy\Desktop\MonteCarloMethod\MonteCarloMethod\obj\Debug\MonteCarloMethod.pdb

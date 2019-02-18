@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TEST1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Test1 t1 = new Test1();
+            t1.main0();
+
+        }
+
+        public class Test1
+        {
+        public Test1()
+            {
+                Console.WriteLine("调用构造函数");
+            }
+
+
+            ~Test1()
+            {
+                Console.WriteLine("调用析构函数");
+                Console.ReadKey();
+
+            }
+
+            public void main0()
+            {
+
+            }
+        }
+    }
+}

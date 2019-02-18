@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Ep0 obj = new Ep0();
+            obj.Main0();
+
+        }
+
+        class Ep
+        {
+            public void Main0()
+            {
+                Console.WriteLine("这里是基类输出");
+            }
+        }
+
+        class Ep0 : Ep
+        {
+            public new void Main0()
+            {
+                Console.WriteLine("这里是子类输出");
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Person objPerson = new Person();
+            objPerson.OutputPerson(1);//开始调用一百个方法
+
+            objPerson.OutputPerson(1);
+
+            objPerson.OutputPerson(1);
+
+            objPerson.OutputPerson(1);
+
+            objPerson.OutputPerson(1);
+
+            objPerson.OutputPerson(1);
+
+            objPerson.OutputPerson(1);
+
+            objPerson.OutputPerson(1);
+
+            objPerson.OutputPerson(1);
+
+            objPerson.OutputPerson(1);
+
+            objPerson.OutputPerson(0);//从本行开始需要学生的输出，我们不用新建方法，进行重写，由于技术达不到，我们通过传递实参的值来控制调用基类还是派生类
+
+            objPerson.OutputPerson(0);
+
+            objPerson.OutputPerson(0);
+
+            objPerson.OutputPerson(0);
+
+
+        }
+
+
+        public class objAll
+        {
+
+            public virtual void OutputPerson(int opr)
+            {
+                Console.WriteLine("This is objPerson");
+            }
+
+        }
+
+        public class Person:objAll
+        {
+            
+            public override void OutputPerson(int opr)
+            {
+                
+                if (opr==0)
+                {
+                    base.OutputPerson(1);
+                }
+                else
+                {
+                    Console.WriteLine("This is Student Person for obj");
+                }
+            }
+            
+        }
+
+                
+
+        /*
+            等你开始架构的时候才能体会到好处。
+            重写的好处例如，你的项目定义了一个方法，被100个地方调用了。
+            突然有需求，有那么30来个地方调用的方法要调整。
+            你怎么办，重新定义一个方法，再把30多个地方全改了吗？
+            太浪费时间，只要在继承的地方重写方法就可以。
+            这样就不要找出那30个地方来改，也不用新增一个方法名。
+
+        *///百度贴吧吧友解释
+    }
+}
