@@ -1,0 +1,2 @@
+MainPackage=H:\C#项目开发\IDBuilder3\IDBuilder3\bin\x64\Debug\IDBuilder3_1.0.5.0_x64_Debug.msix
+SymbolPackage=H:\C#项目开发\IDBuilder3\IDBuilder3\obj\x64\Debug\Symbols\IDBuilder3_1.0.5.0_x64_Debug.appxsym

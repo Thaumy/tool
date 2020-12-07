@@ -1,0 +1,17 @@
+﻿<Window x:Class="IDBuilder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IDBuilder"
+        mc:Ignorable="d"
+        Title="IDBuilder2" Height="316" Width="763" ResizeMode="NoResize">
+    <Grid>
+        <Button x:Name="button" Content="生成签名" Margin="28,192,246,0" Height="64" Background="#FF4D4D4D" BorderBrush="{x:Null}" Foreground="White" FontSize="36" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBox x:Name="textBox1" Height="50" Margin="10,10,10,0" TextWrapping="Wrap" Text="ymd+" VerticalAlignment="Top" Width="700" Background="#FFE0EEFF" Foreground="Black" HorizontalScrollBarVisibility="Auto" FontSize="36" HorizontalAlignment="Center"/>
+        <Label x:Name="label" Content="IDBuilder2 by 水瓜社" Margin="542,226,29,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="186" FontSize="16"/>
+        <TextBox x:Name="textBox2" Height="50" Margin="10,65,10,0" TextWrapping="Wrap" Text="GUID" VerticalAlignment="Top" Width="700" Background="#FFE0EEFF" Foreground="Black" HorizontalScrollBarVisibility="Auto" FontSize="36" HorizontalAlignment="Center"/>
+        <TextBox x:Name="textBox3" Height="50" Margin="10,120,10,0" TextWrapping="Wrap" Text="ymd&amp;GUID4" VerticalAlignment="Top" Width="700" Background="#FFE0EEFF" Foreground="Black" HorizontalScrollBarVisibility="Auto" FontSize="36" HorizontalAlignment="Center"/>
+
+    </Grid>
+</Window>

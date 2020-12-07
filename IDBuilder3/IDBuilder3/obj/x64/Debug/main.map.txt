@@ -1,0 +1,21 @@
+[ResourceMetadata]
+"ResourceDimensions"		"scale-200"
+"ResourceDimensions"		"language-zh-cn"
+"ResourceDimensions"		"language-zh-CN"
+
+[Files]
+"H:\C#项目开发\IDBuilder3\IDBuilder3\obj\x64\Debug\split.pri"			"resources.pri"
+"H:\C#项目开发\IDBuilder3\IDBuilder3\obj\x64\Debug\PackageLayout\System.Runtime.dll"			"System.Runtime.dll"
+"H:\C#项目开发\IDBuilder3\IDBuilder3\obj\x64\Debug\PackageLayout\Microsoft.UI.Xaml.Markup.winmd"			"Microsoft.UI.Xaml.Markup.winmd"
+"H:\C#项目开发\IDBuilder3\IDBuilder3\obj\x64\Debug\PackageLayout\IDBuilder3.xr.xml"			"IDBuilder3.xr.xml"
+"H:\C#项目开发\IDBuilder3\IDBuilder3\obj\x64\Debug\PackageLayout\IDBuilder3.exe"			"IDBuilder3.exe"
+"H:\C#项目开发\IDBuilder3\IDBuilder3\obj\x64\Debug\PackageLayout\WinMetadata\Windows.winmd"			"WinMetadata\Windows.winmd"
+"H:\C#项目开发\IDBuilder3\IDBuilder3\obj\x64\Debug\PackageLayout\Properties\Default.rd.xml"			"Properties\Default.rd.xml"
+"H:\C#项目开发\IDBuilder3\IDBuilder3\obj\x64\Debug\PackageLayout\entrypoint\IDBuilder3.exe"			"entrypoint\IDBuilder3.exe"
+"H:\C#项目开发\IDBuilder3\IDBuilder3\obj\x64\Debug\PackageLayout\Assets\Wide310x150Logo.scale-200.png"			"Assets\Wide310x150Logo.scale-200.png"
+"H:\C#项目开发\IDBuilder3\IDBuilder3\obj\x64\Debug\PackageLayout\Assets\StoreLogo.png"			"Assets\StoreLogo.png"
+"H:\C#项目开发\IDBuilder3\IDBuilder3\obj\x64\Debug\PackageLayout\Assets\Square44x44Logo.targetsize-24_altform-unplated.png"			"Assets\Square44x44Logo.targetsize-24_altform-unplated.png"
+"H:\C#项目开发\IDBuilder3\IDBuilder3\obj\x64\Debug\PackageLayout\Assets\Square44x44Logo.scale-200.png"			"Assets\Square44x44Logo.scale-200.png"
+"H:\C#项目开发\IDBuilder3\IDBuilder3\obj\x64\Debug\PackageLayout\Assets\Square150x150Logo.scale-200.png"			"Assets\Square150x150Logo.scale-200.png"
+"H:\C#项目开发\IDBuilder3\IDBuilder3\obj\x64\Debug\PackageLayout\Assets\SplashScreen.scale-200.png"			"Assets\SplashScreen.scale-200.png"
+"H:\C#项目开发\IDBuilder3\IDBuilder3\obj\x64\Debug\PackageLayout\Assets\LockScreenLogo.scale-200.png"			"Assets\LockScreenLogo.scale-200.png"
