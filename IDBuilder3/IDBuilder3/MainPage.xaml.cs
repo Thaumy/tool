@@ -29,9 +29,21 @@ namespace IDBuilder3
             init();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void generate(object sender, RoutedEventArgs e)
         {
             init();
+        }
+
+        private void en_de_code(object sender, RoutedEventArgs e)
+        {
+            if (rsa_en_de.Text != "")
+            {
+                try
+                {
+                    rsa_en_de.Text = MathH.RSADecrypt(rsa1.Text, rsa_en_de.Text) ?? MathH.RSAEncrypt(rsa2.Text, rsa_en_de.Text);
+                }
+                catch { }
+            }
         }
 
         private void init()
@@ -59,6 +71,11 @@ namespace IDBuilder3
             tb4.Text = Guid.NewGuid().ToString("D");
             tb2.Text = ymdhm + "-" + Guid.NewGuid().ToString("N").Substring(0, 4);
             tb3.Text = ymdhm;
+
+            var kp = new KeyPair(1024, true);
+
+            rsa1.Text = kp.PrivateKey;
+            rsa2.Text = kp.PublicKey;
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>DESKTOP-2NU1NA2</Machine>
+    <Machine>THAUMYSLAPTOP</Machine>
     <WindowsUser>Thaumy</WindowsUser>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetOsVersion>10.0</TargetOsVersion>
@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>H:\C#项目开发\IDBuilder3\IDBuilder3\bin\x64\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>0504F6200404F7B1A34BEEF383635A20D158EEC187DB866550F2977BC1747434</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>55441770EC83087521D12E78F8D0A8241C1522AAFF29E04C62F6B6D0A09FE247</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>ee1671f0-fe1e-4491-9290-5913d7181101_1.0.5.0_x64__gwtcd6gdbp5gj</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>ee1671f0-fe1e-4491-9290-5913d7181101_gwtcd6gdbp5gj!App</RegisteredUserModeAppID>
     <RegisteredPackageID>ee1671f0-fe1e-4491-9290-5913d7181101</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="H:\C#项目开发\IDBuilder3\IDBuilder3\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-11-20T05:22:45.880</Modified>
+      <Modified>2020-12-22T09:40:52.131</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="H:\C#项目开发\IDBuilder3\IDBuilder3\bin\x64\Debug\IDBuilder3.exe">
       <PackagePath>entrypoint\IDBuilder3.exe</PackagePath>
-      <Modified>2020-11-20T05:22:45.225</Modified>
+      <Modified>2020-12-22T09:40:51.568</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x64.microsoft.netcore.universalwindowsplatform\6.2.10\runtimes\win10-x64\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
@@ -86,15 +86,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="H:\C#项目开发\IDBuilder3\IDBuilder3\bin\x64\Debug\IDBuilder3.xr.xml">
       <PackagePath>IDBuilder3.xr.xml</PackagePath>
-      <Modified>2020-11-20T05:22:10.477</Modified>
+      <Modified>2020-12-22T09:28:36.090</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="H:\C#项目开发\IDBuilder3\IDBuilder3\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-11-20T05:13:00.308</Modified>
+      <Modified>2020-12-22T09:39:47.264</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="H:\C#项目开发\IDBuilder3\IDBuilder3\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-11-20T05:22:45.185</Modified>
+      <Modified>2020-12-22T09:39:47.264</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -102,11 +102,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="H:\C#项目开发\IDBuilder3\IDBuilder3\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-11-20T05:09:36.476</Modified>
+      <Modified>2020-12-22T09:08:10.214</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="H:\C#项目开发\IDBuilder3\IDBuilder3\bin\x64\Debug\Core\IDBuilder3.exe">
       <PackagePath>IDBuilder3.exe</PackagePath>
-      <Modified>2020-11-20T05:22:45.880</Modified>
+      <Modified>2020-12-22T09:40:52.129</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
