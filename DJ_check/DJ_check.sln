@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DJ_check", "DJ_check\DJ_check.csproj", "{00A1AE95-A3BD-49DE-843A-E166A4C3EB17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00A1AE95-A3BD-49DE-843A-E166A4C3EB17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00A1AE95-A3BD-49DE-843A-E166A4C3EB17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00A1AE95-A3BD-49DE-843A-E166A4C3EB17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00A1AE95-A3BD-49DE-843A-E166A4C3EB17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74359F13-78AC-40CB-B9F1-405D686C8D3A}
+	EndGlobalSection
+EndGlobal

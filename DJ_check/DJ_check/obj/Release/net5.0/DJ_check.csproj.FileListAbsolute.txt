@@ -1,0 +1,16 @@
+C:\Users\Thaumy\Desktop\DJ_check\DJ_check\bin\Release\net5.0\DJ_check.exe
+C:\Users\Thaumy\Desktop\DJ_check\DJ_check\bin\Release\net5.0\DJ_check.deps.json
+C:\Users\Thaumy\Desktop\DJ_check\DJ_check\bin\Release\net5.0\DJ_check.runtimeconfig.json
+C:\Users\Thaumy\Desktop\DJ_check\DJ_check\bin\Release\net5.0\DJ_check.runtimeconfig.dev.json
+C:\Users\Thaumy\Desktop\DJ_check\DJ_check\bin\Release\net5.0\DJ_check.dll
+C:\Users\Thaumy\Desktop\DJ_check\DJ_check\bin\Release\net5.0\ref\DJ_check.dll
+C:\Users\Thaumy\Desktop\DJ_check\DJ_check\bin\Release\net5.0\DJ_check.pdb
+C:\Users\Thaumy\Desktop\DJ_check\DJ_check\obj\Release\net5.0\DJ_check.csprojAssemblyReference.cache
+C:\Users\Thaumy\Desktop\DJ_check\DJ_check\obj\Release\net5.0\DJ_check.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Thaumy\Desktop\DJ_check\DJ_check\obj\Release\net5.0\DJ_check.AssemblyInfoInputs.cache
+C:\Users\Thaumy\Desktop\DJ_check\DJ_check\obj\Release\net5.0\DJ_check.AssemblyInfo.cs
+C:\Users\Thaumy\Desktop\DJ_check\DJ_check\obj\Release\net5.0\DJ_check.csproj.CoreCompileInputs.cache
+C:\Users\Thaumy\Desktop\DJ_check\DJ_check\obj\Release\net5.0\DJ_check.dll
+C:\Users\Thaumy\Desktop\DJ_check\DJ_check\obj\Release\net5.0\ref\DJ_check.dll
+C:\Users\Thaumy\Desktop\DJ_check\DJ_check\obj\Release\net5.0\DJ_check.pdb
+C:\Users\Thaumy\Desktop\DJ_check\DJ_check\obj\Release\net5.0\DJ_check.genruntimeconfig.cache
