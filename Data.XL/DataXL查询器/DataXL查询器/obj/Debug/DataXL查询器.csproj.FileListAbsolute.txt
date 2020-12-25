@@ -1,6 +1,0 @@
-E:\C#\DataXL查询器\DataXL查询器\bin\Debug\DataXL查询器.exe.config
-E:\C#\DataXL查询器\DataXL查询器\bin\Debug\DataXL查询器.exe
-E:\C#\DataXL查询器\DataXL查询器\bin\Debug\DataXL查询器.pdb
-E:\C#\DataXL查询器\DataXL查询器\obj\Debug\DataXL查询器.csprojResolveAssemblyReference.cache
-E:\C#\DataXL查询器\DataXL查询器\obj\Debug\DataXL查询器.exe
-E:\C#\DataXL查询器\DataXL查询器\obj\Debug\DataXL查询器.pdb
