@@ -34,13 +34,37 @@ namespace IDBuilder3
             init();
         }
 
-        private void en_de_code(object sender, RoutedEventArgs e)
+        private void rsa_convert_btn_click(object sender, RoutedEventArgs e)
         {
-            if (rsa_en_de.Text != "")
+            if (input.Text != "")
             {
                 try
                 {
-                    rsa_en_de.Text = MathH.RSADecrypt(rsa1.Text, rsa_en_de.Text) ?? MathH.RSAEncrypt(rsa2.Text, rsa_en_de.Text);
+                    rsa_en_de.Text = MathH.RSADecrypt(rsa1.Text, input.Text) ?? MathH.RSAEncrypt(rsa2.Text, input.Text);
+                }
+                catch { }
+            }
+        }
+
+        private void md5_convert_btn_click(object sender, RoutedEventArgs e)
+        {
+            if (input.Text != "")
+            {
+                try
+                {
+                    rsa_en_de.Text = MathH.MD5(input.Text);
+                }
+                catch { }
+            }
+        }
+
+        private void sha1_convert_btn_click(object sender, RoutedEventArgs e)
+        {
+            if (input.Text != "")
+            {
+                try
+                {
+                    rsa_en_de.Text = MathH.SHA1(input.Text);
                 }
                 catch { }
             }

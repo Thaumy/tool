@@ -30,13 +30,13 @@
     <AppXManifest Include="H:\C#项目开发\IDBuilder3\IDBuilder3\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-22T09:40:52.131</Modified>
+      <Modified>2020-12-26T06:07:51.274</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="H:\C#项目开发\IDBuilder3\IDBuilder3\bin\x64\Debug\IDBuilder3.exe">
       <PackagePath>entrypoint\IDBuilder3.exe</PackagePath>
-      <Modified>2020-12-22T09:40:51.568</Modified>
+      <Modified>2020-12-26T06:07:50.720</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x64.microsoft.netcore.universalwindowsplatform\6.2.10\runtimes\win10-x64\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
@@ -86,15 +86,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="H:\C#项目开发\IDBuilder3\IDBuilder3\bin\x64\Debug\IDBuilder3.xr.xml">
       <PackagePath>IDBuilder3.xr.xml</PackagePath>
-      <Modified>2020-12-22T09:28:36.090</Modified>
+      <Modified>2020-12-26T06:07:50.654</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="H:\C#项目开发\IDBuilder3\IDBuilder3\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-12-22T09:39:47.264</Modified>
+      <Modified>2020-12-26T06:06:05.388</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="H:\C#项目开发\IDBuilder3\IDBuilder3\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-12-22T09:39:47.264</Modified>
+      <Modified>2020-12-26T06:07:50.663</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -106,7 +106,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="H:\C#项目开发\IDBuilder3\IDBuilder3\bin\x64\Debug\Core\IDBuilder3.exe">
       <PackagePath>IDBuilder3.exe</PackagePath>
-      <Modified>2020-12-22T09:40:52.129</Modified>
+      <Modified>2020-12-26T06:07:51.274</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
