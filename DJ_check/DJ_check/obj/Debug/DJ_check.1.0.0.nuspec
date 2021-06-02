@@ -11,7 +11,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\Thaumy\Desktop\DJ_check\DJ_check\bin\Debug\net5.0\DJ_check.runtimeconfig.json" target="lib\net5.0\DJ_check.runtimeconfig.json" />
-    <file src="C:\Users\Thaumy\Desktop\DJ_check\DJ_check\bin\Debug\net5.0\DJ_check.dll" target="lib\net5.0\DJ_check.dll" />
+    <file src="C:\Users\Thaumy\Desktop\GitHub\Masiproj\DJ_check\DJ_check\bin\Debug\net5.0\DJ_check.runtimeconfig.json" target="lib\net5.0\DJ_check.runtimeconfig.json" />
+    <file src="C:\Users\Thaumy\Desktop\GitHub\Masiproj\DJ_check\DJ_check\bin\Debug\net5.0\DJ_check.dll" target="lib\net5.0\DJ_check.dll" />
   </files>
 </package>
