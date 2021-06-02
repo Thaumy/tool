@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Text.RegularExpressions;
+
 
 namespace DJ_check
 {
@@ -7,39 +9,55 @@ namespace DJ_check
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("请输入 dng 存放路径（内部照片后缀为 dng ，区分大小写）:");
-            var dng_path = Console.ReadLine();
-            Console.WriteLine("请输入 jpg 存放路径（内部照片后缀为 jpg ，区分大小写）:");
-            var jpg_path = Console.ReadLine();
+            Console.WriteLine("键入文件夹物理路径A(自动分析DNG/JPG目录):");
+            var pathA = Console.ReadLine();
+            Console.WriteLine("键入文件夹物理路径B(自动分析DNG/JPG目录):");
+            var pathB = Console.ReadLine();
 
-            DirectoryInfo dng_folder = new DirectoryInfo(dng_path);
-            DirectoryInfo jpg_folder = new DirectoryInfo(jpg_path);
+            var folderA = new DirectoryInfo(pathA);
+            var folderB = new DirectoryInfo(pathB);
+            var filesA = folderA.GetFiles();
+            var filesB = folderB.GetFiles();
+
+            string jpgPath;
+            string dngPath;
+            DirectoryInfo jpgFolder;
+            DirectoryInfo dngFolder;
+
+            if (Regex.IsMatch(filesA[0].Name, "[\\w]*.(?i)jpg(?-i)"))//如果是jpg文件夹
+            {
+                (jpgPath, jpgFolder) = (pathA, folderA);
+                (dngPath, dngFolder) = (pathB, folderB);
+            }
+            else
+            {
+                (jpgPath, jpgFolder) = (pathB, folderB);
+                (dngPath, dngFolder) = (pathA, folderA);
+            }
 
             int count = 0;//应删除计数
 
             //建立存放被删除dng文件的should_be_deleted文件夹
-            Directory.CreateDirectory(dng_path + "\\should_be_deleted");
+            Directory.CreateDirectory($@"{dngPath}\should_be_deleted");
 
-            foreach (FileInfo dng_file in dng_folder.GetFiles("*.dng"))
+            foreach (FileInfo dngFile in dngFolder.GetFiles())
             {
-                var dng_name = dng_file.Name.Substring(0, dng_file.Name.LastIndexOf('.'));
+                var dngFileName = dngFile.Name.Substring(0, dngFile.Name.LastIndexOf('.'));
 
                 //如果在jpg文件夹搜索到的指定dng文件个数为0
-                if (jpg_folder.GetFiles("*" + dng_name + "*").Length == 0)
+                if (jpgFolder.GetFiles($"{dngFileName}*").Length == 0)
                 {
-                    Console.WriteLine(dng_file.Name);//打印该dng的名字
+                    Console.WriteLine(dngFile.Name);//打印该dng的名字
 
                     //将dng文件复制到dng文件夹下的should_be_deleted文件夹，并删除该dng文件
-                    dng_file.CopyTo(dng_path + "\\should_be_deleted\\" + dng_name + ".dng");
-                    File.Delete(dng_path + "\\" + dng_name + ".dng");
+                    dngFile.MoveTo($@"{dngPath}\should_be_deleted\{dngFile.Name}");
 
                     //计数加一
                     count++;
                 }
-
             }
 
-            Console.WriteLine("统计完成，应删除的 dng 文件个数为：" + count);
+            Console.WriteLine($"统计完成，应删除的 dng 文件个数为:{count}");
             Console.ReadKey();
         }
     }
