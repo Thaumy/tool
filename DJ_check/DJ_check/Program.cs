@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Text.RegularExpressions;
 
 
 namespace DJ_check
@@ -14,26 +13,9 @@ namespace DJ_check
             Console.WriteLine("键入文件夹物理路径B(自动分析DNG/JPG目录):");
             var pathB = Console.ReadLine();
 
-            var folderA = new DirectoryInfo(pathA);
-            var folderB = new DirectoryInfo(pathB);
-            var filesA = folderA.GetFiles();
-            var filesB = folderB.GetFiles();
-
-            string jpgPath;
-            string dngPath;
-            DirectoryInfo jpgFolder;
-            DirectoryInfo dngFolder;
-
-            if (Regex.IsMatch(filesA[0].Name, "[\\w]*.(?i)jpg(?-i)"))//如果是jpg文件夹
-            {
-                (jpgPath, jpgFolder) = (pathA, folderA);
-                (dngPath, dngFolder) = (pathB, folderB);
-            }
-            else
-            {
-                (jpgPath, jpgFolder) = (pathB, folderB);
-                (dngPath, dngFolder) = (pathA, folderA);
-            }
+            var sep = new Sparator(pathA, pathB);
+            var (_, jpgFolder) = sep.JPG();
+            var (dngPath, dngFolder) = sep.DNG();
 
             int count = 0;//应删除计数
 
