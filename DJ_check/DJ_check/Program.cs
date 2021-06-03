@@ -26,12 +26,12 @@ namespace DJ_check
             {
                 var dngFileName = dngFile.Name.Substring(0, dngFile.Name.LastIndexOf('.'));
 
-                //如果在jpg文件夹搜索到的指定dng文件个数为0
+                //如果在jpg文件夹搜索到的指定文件个数为0
                 if (jpgFolder.GetFiles($"{dngFileName}*").Length == 0)
                 {
                     Console.WriteLine(dngFile.Name);//打印该dng的名字
 
-                    //将dng文件复制到dng文件夹下的should_be_deleted文件夹，并删除该dng文件
+                    //将dng文件移动到dng文件夹下的should_be_deleted文件夹
                     dngFile.MoveTo($@"{dngPath}\should_be_deleted\{dngFile.Name}");
 
                     //计数加一
