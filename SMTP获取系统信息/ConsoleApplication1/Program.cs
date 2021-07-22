@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using System.Net.Mail;
 using System.Management;
 using System.Runtime.InteropServices;
-using Microsoft.Win32;
-using System.Windows.Forms;
 
 
 namespace ConsoleApplication1
@@ -17,7 +11,7 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            
+
             string inf = null;
             SmtpClient c = new SmtpClient();
             c.Host = "smtp.126.com";
@@ -33,13 +27,13 @@ namespace ConsoleApplication1
                 MachineInfo infs = new MachineInfo();
                 inf = infs.example();
             }
-            catch{}
+            catch { }
 
             try
             {
                 c.Send("Adownloads@126.com", "studio_ai@outlook.com", "Pinn's Log", "来自Pinn获取到的信息:\n" + inf);
             }
-            catch{}
+            catch { }
             /*
             try
             {
@@ -116,10 +110,88 @@ namespace ConsoleApplication1
             return Instance;
         }
 
+
+        [DllImport("Iphlpapi.dll")]
+        private static extern int SendARP(int dest, int host, ref long mac, ref int length);
+        [DllImport("Ws2_32.dll")]
+        private static extern int inet_addr(string ip);
+
+
+
         /// <summary>  
-        /// 获取本地ip地址，多个ip  
+        /// 硬盘序列号
+        /// </summary>    
+        public string GetHardDiskSerialNumber()
+        {
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_PhysicalMedia");
+                string sHardDiskSerialNumber = "";
+                foreach (ManagementObject mo in searcher.Get())
+                {
+                    sHardDiskSerialNumber = mo["SerialNumber"].ToString().Trim();
+                    break;
+                }
+                return sHardDiskSerialNumber;
+            }
+            catch
+            {
+                return "";
+            }
+        }
+        /// <summary>  
+        /// 硬盘序列号
         /// </summary>  
-        public String[] GetLocalIpAddress()
+        public string GetDiskSerialNumber()
+        {
+            //这种模式在插入一个U盘后可能会有不同的结果，如插入我的手机时  
+            String HDid = "";
+            ManagementClass mc = new ManagementClass("Win32_DiskDrive");
+            ManagementObjectCollection moc = mc.GetInstances();
+            foreach (ManagementObject mo in moc)
+            {
+                HDid = (string)mo.Properties["Model"].Value;//SerialNumber  
+                break;//解决有多个物理盘时产生的问题，只取第一个物理硬盘  
+            }
+            return HDid;
+
+
+            /*ManagementClass mc = new ManagementClass("Win32_PhysicalMedia"); 
+            ManagementObjectCollection moc = mc.GetInstances(); 
+            string str = ""; 
+            foreach (ManagementObject mo in moc) 
+            { 
+                str = mo.Properties["SerialNumber"].Value.ToString(); 
+                break; 
+            } 
+            return str;*/
+        }
+
+        /// <summary>  
+        /// IP地址
+        /// </summary>  
+        public string GetIPAddress()
+        {
+            string st = "";
+            ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
+            ManagementObjectCollection moc = mc.GetInstances();
+            foreach (ManagementObject mo in moc)
+            {
+                if ((bool)mo["IPEnabled"] == true)
+                {
+                    //st=mo["IpAddress"].ToString();   
+                    System.Array ar;
+                    ar = (System.Array)(mo.Properties["IpAddress"].Value);
+                    st = ar.GetValue(0).ToString();
+                    break;
+                }
+            }
+            return st;
+        }
+        /// <summary>  
+        /// 本地多个IP地址
+        /// </summary>  
+        public string[] GetLocalIpAddress()
         {
             string hostName = System.Net.Dns.GetHostName();                    //获取主机名称  
             System.Net.IPAddress[] addresses = System.Net.Dns.GetHostAddresses(hostName); //解析主机IP地址  
@@ -131,24 +203,19 @@ namespace ConsoleApplication1
 
             return IP;
         }
-    
-
-        //从网站"http://1111.ip138.com/ic.asp"，获取本机外网ip地址信息串  
-        //"<html>\r\n<head>\r\n<meta http-equiv=\"content-type\" content=\"text/html; charset=gb2312\">\r\n<title>   
-        //您的IP地址 </title>\r\n</head>\r\n<body style=\"margin:0px\"><center>您的IP是：[218.104.71.178] 来自：安徽省合肥市 联通</center></body></html>"  
-
 
         /// <summary>  
-        /// 获取外网ip地址  
+        /// 外网IP地址
         /// </summary>  
         public string[] GetExtenalIpAddress()
         {
-            string[] IP = new string[] { "未获取到外网ip", "" };
+            string[] IP = new string[] { "未获取到外网IP", "" };
 
-
+            //从网站"http://1111.ip138.com/ic.asp"，获取本机外网ip地址信息串
+            //"<html>\r\n<head>\r\n<meta http-equiv=\"content-type\" content=\"text/html; charset=gb2312\">\r\n<title>
+            //您的IP地址 </title>\r\n</head>\r\n<body style=\"margin:0px\"><center>您的IP是：[218.104.71.178] 来自：安徽省合肥市 联通</center></body></html>"
             string address = "http://1111.ip138.com/ic.asp";
             string str = GetWebStr(address);
-
 
             try
             {
@@ -156,29 +223,28 @@ namespace ConsoleApplication1
                 int i1 = str.IndexOf("[") + 1, i2 = str.IndexOf("]");
                 IP[0] = str.Substring(i1, i2 - i1);
 
-
                 //提取网址说明信息 "来自：安徽省合肥市 联通"  
                 i1 = i2 + 2; i2 = str.IndexOf("<", i1);
                 IP[1] = str.Substring(i1, i2 - i1);
             }
-            catch (Exception) { }
+            catch { }
 
 
             return IP;
         }
-
-
         /// <summary>  
-        /// 获取网址address的返回的文本串数据  
+        /// 获取网址的返回的文本数据  
         /// </summary>  
-        public string GetWebStr(string address)
+        private string GetWebStr(string address)
         {
             string str = "";
             try
             {
                 //从网址中获取本机ip数据  
-                System.Net.WebClient client = new System.Net.WebClient();
-                client.Encoding = System.Text.Encoding.Default;
+                var client = new System.Net.WebClient
+                {
+                    Encoding = System.Text.Encoding.Default
+                };
                 str = client.DownloadString(address);
                 client.Dispose();
             }
@@ -187,9 +253,26 @@ namespace ConsoleApplication1
 
             return str;
         }
-        
         /// <summary>  
-        /// 获取本机MAC
+        /// MAC地址
+        /// </summary>  
+        public string GetMacAddress()
+        {
+            string mac = "";
+            ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
+            ManagementObjectCollection moc = mc.GetInstances();
+            foreach (ManagementObject mo in moc)
+            {
+                if ((bool)mo["IPEnabled"] == true)
+                {
+                    mac = mo["MacAddress"].ToString();
+                    break;
+                }
+            }
+            return mac;
+        }
+        /// <summary>  
+        /// 本机MAC地址
         /// </summary>  
         public string GetLocalMac()
         {
@@ -203,14 +286,28 @@ namespace ConsoleApplication1
             }
             return (mac);
         }
-
-        [DllImport("Iphlpapi.dll")]
-        private static extern int SendARP(Int32 dest, Int32 host, ref Int64 mac, ref Int32 length);
-        [DllImport("Ws2_32.dll")]
-        private static extern Int32 inet_addr(string ip);
-
         /// <summary>  
-        /// 获取ip对应的MAC地址
+        /// 网卡MAC地址
+        /// </summary>  
+        public string GetNetCardMACAddress()
+        {
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapter WHERE ((MACAddress Is Not NULL) AND (Manufacturer <> 'Microsoft'))");
+                string NetCardMACAddress = "";
+                foreach (ManagementObject mo in searcher.Get())
+                {
+                    NetCardMACAddress = mo["MACAddress"].ToString().Trim();
+                }
+                return NetCardMACAddress;
+            }
+            catch
+            {
+                return "";
+            }
+        }
+        /// <summary>  
+        /// 与IP关联的MAC地址
         /// </summary>  
         public string GetMacAddress(string ip)
         {
@@ -232,34 +329,94 @@ namespace ConsoleApplication1
             return "获取Mac地址失败";
         }
 
-
         /// <summary>  
-        /// 获取主板序列号  
+        /// 用户名  
         /// </summary>  
-        /// <returns></returns>  
-        public string GetBIOSSerialNumber()
+        public string GetUserName()
         {
-            try
+            return Environment.UserName;
+        }
+        /// <summary>  
+        /// 计算机名  
+        /// </summary>  
+        public string GetComputerName()
+        {
+            return Environment.MachineName;
+        }
+        /// <summary>  
+        /// 操作系统类型
+        /// </summary>  
+        public string GetSystemType()
+        {
+            string st = "";
+            ManagementClass mc = new ManagementClass("Win32_ComputerSystem");
+            ManagementObjectCollection moc = mc.GetInstances();
+            foreach (ManagementObject mo in moc)
             {
-                ManagementObjectSearcher searcher = new ManagementObjectSearcher("Select * From Win32_BIOS");
-                string sBIOSSerialNumber = "";
-                foreach (ManagementObject mo in searcher.Get())
-                {
-                    sBIOSSerialNumber = mo["SerialNumber"].ToString().Trim();
-                }
-                return sBIOSSerialNumber;
+                st = mo["SystemType"].ToString();
             }
-            catch
-            {
-                return "";
-            }
+            return st;
         }
 
+        /// <summary>  
+        /// 物理内存
+        /// </summary>
+        public string GetPhysicalMemory()
+        {
+            string st = "";
+            ManagementClass mc = new ManagementClass("Win32_ComputerSystem");
+            ManagementObjectCollection moc = mc.GetInstances();
+            foreach (ManagementObject mo in moc)
+            {
+                st = mo["TotalPhysicalMemory"].ToString();
+            }
+            return st;
+        }
 
         /// <summary>  
-        /// 获取CPU序列号  
+        /// 显卡PNPDeviceID
         /// </summary>  
-        /// <returns></returns>  
+        public string GetVideoPNPID()
+        {
+            string st = "";
+            ManagementObjectSearcher mos = new ManagementObjectSearcher("Select * from Win32_VideoController");
+            foreach (ManagementObject mo in mos.Get())
+            {
+                st = mo["PNPDeviceID"].ToString();
+            }
+            return st;
+        }
+        /// <summary>  
+        /// 声卡PNPDeviceID  
+        /// </summary>  
+        public string GetSoundPNPID()
+        {
+            string st = "";
+            ManagementObjectSearcher mos = new ManagementObjectSearcher("Select * from Win32_SoundDevice");
+            foreach (ManagementObject mo in mos.Get())
+            {
+                st = mo["PNPDeviceID"].ToString();
+            }
+            return st;
+        }
+
+        /// <summary>  
+        /// CPU编号  
+        /// </summary>  
+        public string GetCPUID()
+        {
+            string cpuid = "";
+            ManagementClass mc = new ManagementClass("Win32_Processor");
+            ManagementObjectCollection moc = mc.GetInstances();
+            foreach (ManagementObject mo in moc)
+            {
+                cpuid = mo.Properties["ProcessorId"].Value.ToString();
+            }
+            return cpuid;
+        }
+        /// <summary>  
+        /// CPU序列号  
+        /// </summary>  
         public string GetCPUSerialNumber()
         {
             try
@@ -277,223 +434,9 @@ namespace ConsoleApplication1
                 return "";
             }
         }
-
-
-        /// </summary>  
-        /// 获取硬盘序列号
-        /// </summary>    
-        public string GetHardDiskSerialNumber()
-        {
-            try
-            {
-                ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_PhysicalMedia");
-                string sHardDiskSerialNumber = "";
-                foreach (ManagementObject mo in searcher.Get())
-                {
-                    sHardDiskSerialNumber = mo["SerialNumber"].ToString().Trim();
-                    break;
-                }
-                return sHardDiskSerialNumber;
-            }
-            catch
-            {
-                return "";
-            }
-        }
-
-
-        /// </summary>  
-        /// 获取网卡地址
-        /// </summary>  
-        public string GetNetCardMACAddress()
-        {
-            try
-            {
-                ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapter WHERE ((MACAddress Is Not NULL) AND (Manufacturer <> 'Microsoft'))");
-                string NetCardMACAddress = "";
-                foreach (ManagementObject mo in searcher.Get())
-                {
-                    NetCardMACAddress = mo["MACAddress"].ToString().Trim();
-                }
-                return NetCardMACAddress;
-            }
-            catch
-            {
-                return "";
-            }
-        }
-
-
-        /// <summary>  
-        /// 获得CPU编号  
-        /// </summary>  
-        public string GetCPUID()
-        {
-            string cpuid = "";
-            ManagementClass mc = new ManagementClass("Win32_Processor");
-            ManagementObjectCollection moc = mc.GetInstances();
-            foreach (ManagementObject mo in moc)
-            {
-                cpuid = mo.Properties["ProcessorId"].Value.ToString();
-            }
-            return cpuid;
-        }
-
-
-        /// <summary>  
-        /// 获取硬盘序列号
-        /// </summary>  
-        public string GetDiskSerialNumber()
-        {
-            //这种模式在插入一个U盘后可能会有不同的结果，如插入我的手机时  
-            String HDid = "";
-            ManagementClass mc = new ManagementClass("Win32_DiskDrive");
-            ManagementObjectCollection moc = mc.GetInstances();
-            foreach (ManagementObject mo in moc)
-            {
-                HDid = (string)mo.Properties["Model"].Value;//SerialNumber  
-                break;//这名话解决有多个物理盘时产生的问题，只取第一个物理硬盘  
-            }
-            return HDid;
-
-
-            /*ManagementClass mc = new ManagementClass("Win32_PhysicalMedia"); 
-            ManagementObjectCollection moc = mc.GetInstances(); 
-            string str = ""; 
-            foreach (ManagementObject mo in moc) 
-            { 
-                str = mo.Properties["SerialNumber"].Value.ToString(); 
-                break; 
-            } 
-            return str;*/
-        }
-
-
-        /// <summary>  
-        /// 获取网卡硬件地址  
-        /// </summary>  
-        public string GetMacAddress()
-        {
-            string mac = "";
-            ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
-            ManagementObjectCollection moc = mc.GetInstances();
-            foreach (ManagementObject mo in moc)
-            {
-                if ((bool)mo["IPEnabled"] == true)
-                {
-                    mac = mo["MacAddress"].ToString();
-                    break;
-                }
-            }
-            return mac;
-        }
-
-
-        /// <summary>  
-        /// 获取IP地址
-        /// </summary>  
-        public string GetIPAddress()
-        {
-            string st = "";
-            ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
-            ManagementObjectCollection moc = mc.GetInstances();
-            foreach (ManagementObject mo in moc)
-            {
-                if ((bool)mo["IPEnabled"] == true)
-                {
-                    //st=mo["IpAddress"].ToString();   
-                    System.Array ar;
-                    ar = (System.Array)(mo.Properties["IpAddress"].Value);
-                    st = ar.GetValue(0).ToString();
-                    break;
-                }
-            }
-            return st;
-        }
-        
-        /// <summary>  
-        /// 操作系统的登录用户名  
-        /// </summary>  
-        public string GetUserName()
-        {
-            return Environment.UserName;
-        }
-
-
-        /// <summary>  
-        /// 获取计算机名  
-        /// </summary>  
-        public string GetComputerName()
-        {
-            return Environment.MachineName;
-        }
-
-
-        /// <summary>  
-        /// 操作系统类型
-        /// </summary>  
-        public string GetSystemType()
-        {
-            string st = "";
-            ManagementClass mc = new ManagementClass("Win32_ComputerSystem");
-            ManagementObjectCollection moc = mc.GetInstances();
-            foreach (ManagementObject mo in moc)
-            {
-                st = mo["SystemType"].ToString();
-            }
-            return st;
-        }
-
-
-        /// <summary>  
-        /// 物理内存
-        /// </summary>  
-        public string GetPhysicalMemory()
-        {
-            string st = "";
-            ManagementClass mc = new ManagementClass("Win32_ComputerSystem");
-            ManagementObjectCollection moc = mc.GetInstances();
-            foreach (ManagementObject mo in moc)
-            {
-                st = mo["TotalPhysicalMemory"].ToString();
-            }
-            return st;
-        }
-
-
-        /// <summary>  
-        /// 显卡PNPDeviceID
-        /// </summary>  
-        public string GetVideoPNPID()
-        {
-            string st = "";
-            ManagementObjectSearcher mos = new ManagementObjectSearcher("Select * from Win32_VideoController");
-            foreach (ManagementObject mo in mos.Get())
-            {
-                st = mo["PNPDeviceID"].ToString();
-            }
-            return st;
-        }
-
-
-        /// <summary>  
-        /// 声卡PNPDeviceID  
-        /// </summary>  
-        public string GetSoundPNPID()
-        {
-            string st = "";
-            ManagementObjectSearcher mos = new ManagementObjectSearcher("Select * from Win32_SoundDevice");
-            foreach (ManagementObject mo in mos.Get())
-            {
-                st = mo["PNPDeviceID"].ToString();
-            }
-            return st;
-        }
-
-
-        /// <summary>  
-        /// CPU版本信息
-        /// </summary>  
+        /// <summary>
+        /// CPU版本
+        /// </summary>
         public string GetCPUVersion()
         {
             string st = "";
@@ -504,10 +447,9 @@ namespace ConsoleApplication1
             }
             return st;
         }
-        
-        /// <summary>  
-        /// CPU名称信息
-        /// </summary>  
+        /// <summary>
+        /// CPU名称
+        /// </summary>
         public string GetCPUName()
         {
             string st = "";
@@ -518,10 +460,8 @@ namespace ConsoleApplication1
             }
             return st;
         }
-
-
         /// <summary>  
-        /// CPU制造厂商 
+        /// CPU制造商 
         /// </summary>  
         public string GetCPUManufacturer()
         {
@@ -534,9 +474,8 @@ namespace ConsoleApplication1
             return st;
         }
 
-
         /// <summary>  
-        /// 主板制造厂商
+        /// 主板制造商
         /// </summary>  
         public string GetBoardManufacturer()
         {
@@ -547,8 +486,6 @@ namespace ConsoleApplication1
             ManagementBaseObject board = data.Current;
             return board.GetPropertyValue("Manufacturer").ToString();
         }
-
-
         /// <summary>  
         /// 主板编号
         /// </summary>  
@@ -562,10 +499,9 @@ namespace ConsoleApplication1
             }
             return st;
         }
-
-        /// </summary>  
+        /// <summary>
         /// 主板型号
-        /// </summary>  
+        /// </summary>
         public string GetBoardType()
         {
             string st = "";
@@ -577,5 +513,25 @@ namespace ConsoleApplication1
             return st;
         }
 
+        /// <summary>  
+        /// BIOS序列号  
+        /// </summary>  
+        public string GetBIOSSerialNumber()
+        {
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("Select * From Win32_BIOS");
+                string sBIOSSerialNumber = "";
+                foreach (ManagementObject mo in searcher.Get())
+                {
+                    sBIOSSerialNumber = mo["SerialNumber"].ToString().Trim();
+                }
+                return sBIOSSerialNumber;
+            }
+            catch
+            {
+                return "";
+            }
+        }
     }
 }
