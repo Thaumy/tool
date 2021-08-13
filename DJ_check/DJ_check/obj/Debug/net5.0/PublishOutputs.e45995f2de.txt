@@ -1,5 +1,0 @@
-C:\Users\Thaumy\Desktop\DJ_check\DJ_check\bin\Release\netcoreapp3.1\publish\DJ_check.exe
-C:\Users\Thaumy\Desktop\DJ_check\DJ_check\bin\Release\netcoreapp3.1\publish\DJ_check.dll
-C:\Users\Thaumy\Desktop\DJ_check\DJ_check\bin\Release\netcoreapp3.1\publish\DJ_check.deps.json
-C:\Users\Thaumy\Desktop\DJ_check\DJ_check\bin\Release\netcoreapp3.1\publish\DJ_check.runtimeconfig.json
-C:\Users\Thaumy\Desktop\DJ_check\DJ_check\bin\Release\netcoreapp3.1\publish\DJ_check.pdb
