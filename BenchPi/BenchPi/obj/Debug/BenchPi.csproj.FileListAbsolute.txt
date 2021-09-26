@@ -1,6 +1,0 @@
-C:\Users\Thaumy\Desktop\BenchPi\BenchPi\bin\Debug\BenchPi.exe.config
-C:\Users\Thaumy\Desktop\BenchPi\BenchPi\bin\Debug\BenchPi.exe
-C:\Users\Thaumy\Desktop\BenchPi\BenchPi\bin\Debug\BenchPi.pdb
-C:\Users\Thaumy\Desktop\BenchPi\BenchPi\obj\Debug\BenchPi.exe
-C:\Users\Thaumy\Desktop\BenchPi\BenchPi\obj\Debug\BenchPi.pdb
-C:\Users\Thaumy\Desktop\BenchPi\BenchPi\obj\Debug\BenchPi.csprojAssemblyReference.cache

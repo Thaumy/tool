@@ -1,43 +1,55 @@
-# Compiled source #
-*.com
+# compiled source
 *.class
+*.com
 *.dll
 *.exe
-*.o
+*.obj
 *.so
+*.o
+*.a
 
-# Packages #
-#*.7z
+# packages
 *.dmg
-*.gz
 *.iso
 *.jar
 *.rar
 *.tar
 *.zip
+*.7z
+*.gz
 
-# Logs and databases #
+# logs and databases
 *.log
 
-# OS generated files #
-.DS_Store
-.DS_Store?
-._*
+# OS generated files
 .Spotlight-V100
-.Trashes
 ehthumbs.db
+.DS_Store?
+.DS_Store
 Thumbs.db
+.Trashes
+._*
 
-# Node
-/dist
-/dist_electron
+# node
+dist_electron
 node_modules
+dist
 
-# Editor directories and files
-.idea
+# editor directories and files
+.gradle
 .vscode
+.idea
 .vs
 
 # local env files
-.env.local
 .env.*.local
+.env.local
+
+# cmake
+cmake-build-debug-coverage
+cmake-build-debug
+
+# build
+build
+bin
+obj
