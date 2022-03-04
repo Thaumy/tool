@@ -5,17 +5,14 @@ function Open_panel() {
     for (j = 1; j <= course_blockrrr.length - 1; j++) {
         course_blockrrr[j].children[0].children[7].click();
     };
-};
+}
 
 function courseOK(course_block, k) {
-    if ((course_block[k].getElementsByClassName('jsxm')[0].textContent === '尔雅' ||
-            course_block[k].getElementsByClassName('jsxm')[0].textContent === '卓越') &&
-        course_block[k].getElementsByClassName('kcgs')[0].textContent != '理学工学与医学类' &&
-        course_block[k].getElementsByClassName('kcgs')[0].textContent != '艺术类') {
+    if (course_block[k].getElementsByClassName('jxbmc')[0].textContent === '(2021-2022-2)-C212082200-2')
         return true;
-    } else {
+    else
         return false;
-    }
+
 }
 
 function sleep(d) {
@@ -47,7 +44,7 @@ function Click_button() {
                     document.getElementById('btn_ok').click()
                 } catch (e) {
                     console.log("err")
-                }
+                } /*打开课程panel*/
             }
             k++
         } else {
